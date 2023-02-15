@@ -82,7 +82,7 @@ Progress
     </div>
     <div class="g-menu_progress__item-entry">
         <div class="g-menu_progress__item-entry-inputfield">
-            <input type="number" id="edit_progress_clients_helped" name="edit_progress_clients_helped" placeholder="<?php echo $clients_helped; ?>" required/>
+            <input type="number" id="edit_progress_clients_helped" name="edit_progress_clients_helped" placeholder="" value="<?php echo $clients_helped; ?>" required/>
         </div>
     </div>
 </div>
@@ -92,7 +92,7 @@ Progress
     </div>
     <div class="g-menu_progress__item-entry">
         <div class="g-menu_progress__item-entry-inputfield">
-            <input type="number" id="edit_progress_ad_spent" name="edit_progress_ad_spent" placeholder="<?php echo $total_ad_spent; ?>" required/>
+            <input type="number" id="edit_progress_ad_spent" name="edit_progress_ad_spent" placeholder="<?php echo $total_ad_spent; ?>" value="<?php echo $total_ad_spent; ?>" required/>
         </div>
     </div>
 </div>
@@ -102,7 +102,7 @@ Progress
     </div>
     <div class="g-menu_progress__item-entry">
         <div class="g-menu_progress__item-entry-inputfield">
-            <input type="number" id="edit_progress_offices" name="edit_progress_offices" placeholder="<?php echo $number_of_offices; ?>" required/>
+            <input type="number" id="edit_progress_offices" name="edit_progress_offices" placeholder="" value="<?php echo $number_of_offices; ?>" required/>
         </div>
     </div>
 </div>
@@ -112,7 +112,7 @@ Progress
     </div>
     <div class="g-menu_progress__item-entry">
         <div class="g-menu_progress__item-entry-inputfield">
-            <input type="number" id="edit_progress_services" name="edit_progress_services" placeholder="<?php echo $services; ?>" required/>
+            <input type="number" id="edit_progress_services" name="edit_progress_services" placeholder="" value="<?php echo $services; ?>" required/>
         </div>
     </div>
 </div>

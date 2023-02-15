@@ -3,6 +3,16 @@
     session_start();
     include('../functions/db/connection.php');
     include('../functions/upload/imgUpload.php');
+
+    $sql = "SELECT * FROM details ORDER BY id DESC LIMIT 1";
+    try {
+        $result = $conn->query($sql);
+        $doc = $result->fetch_assoc();
+
+        $logo_img = $doc['logoUrl'];
+    } catch (\Throwable $th) {
+        throw $th;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +32,7 @@
     <section class="w-admin__container">
         <div class="w-admin__container__menuside">
             <div class="w-admin__container__menuside__logocontainer">
-                <img src="../assets/logo.png"/>
+                <img src="../assets/<?php echo $logo_img ?>"/>
             </div>
             <div class="w-admin__container__menuside__menuitemcontainer">
                 <?php 
