@@ -1,0 +1,344 @@
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: contents;
+}
+
+.w-admin__container{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.w-admin__container__menuside{
+    width: 30%;
+    background-color: #100D26;
+}
+
+.w-admin__container__menuside__logocontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.w-admin__container__menuside__logocontainer img{
+    width: 135px;
+}
+
+.w-admin__container__menuside__menuitemcontainer{
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.w-admin__container__menuside__menuitemcontainer-item{
+    width: 80%;
+    padding: 15px 30px;
+    margin-bottom: 15px;
+    background-color: #343052;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.g-webadmin-selected_item{
+    border: 2px solid #FFFFFF;
+}
+
+.w-admin__container__contentside{
+    width: 70%;
+    background-color: #F5F5F5;
+    padding: 60px 20px 0 20px;
+}
+
+.w-admin__container__contentside-title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #100D26;
+    padding-bottom: 30px;
+}
+
+.g-menu_details__item{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.g-menu_details__item-key{
+    width: 40%;
+    padding-right: 15px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #100D26;
+}
+
+.g-menu_details__item-entry{
+    width: 60%;
+    display: flex;
+}
+
+.g-menu_details__item-entry-uploadbtn{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.g-menu_details__item-entry-inputfield{
+    border: 2px solid rgba(16, 13, 38, 0.6);
+    border-radius: 6px;
+    padding: 3px 10px;
+    background-color: white;
+    min-width: 90%;
+}
+
+.g-menu_details__item-entry-inputfield input{
+    padding: 2px;
+    outline: none;
+    border: none;
+}
+
+.g-menu_details__item-entry-inputfield input::placeholder{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.g-menu_details__savebtncontainer{
+    display: flex;
+    margin: 15px 0;
+}
+
+.g-menu_details__savebtncontainer-savebtn{
+    background: #B90EDF;
+    border-radius: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+
+
+.g-menu_progress__item{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.g-menu_progress__item-key{
+    width: 40%;
+    padding-right: 15px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #100D26;
+}
+
+.g-menu_progress__item-entry{
+    width: 60%;
+    display: flex;
+}
+
+.g-menu_progress__item-entry-uploadbtn{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.g-menu_progress__item-entry-inputfield{
+    border: 2px solid rgba(16, 13, 38, 0.6);
+    border-radius: 6px;
+    padding: 3px 10px;
+    background-color: white;
+    max-width: 20%;
+}
+
+.g-menu_progress__item-entry-inputfield input{
+    max-width: 100%;
+    padding: 2px;
+    outline: none;
+    border: none;
+}
+
+.g-menu_progress__item-entry-inputfield input::placeholder{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.g-menu_progress__savebtncontainer{
+    display: flex;
+    margin: 15px 0;
+}
+
+.g-menu_progress__savebtncontainer-savebtn{
+    background: #B90EDF;
+    border-radius: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+
+
+.g-menu_members__item{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.g-menu_members__item-key{
+    width: 40%;
+    padding-right: 15px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #100D26;
+}
+
+.g-menu_members__item-entry{
+    width: 60%;
+    display: flex;
+}
+
+.g-menu_members__item-entry-uploadbtn{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.g-menu_members__item-entry-inputfield{
+    border: 2px solid rgba(16, 13, 38, 0.6);
+    border-radius: 6px;
+    padding: 3px 10px;
+    background-color: white;
+    max-width: 90%;
+}
+
+.g-menu_members__item-entry-inputfield input{
+    max-width: 100%;
+    padding: 2px;
+    outline: none;
+    border: none;
+}
+
+.g-menu_members__item-entry-inputfield input::placeholder{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.g-menu_members__savebtncontainer{
+    display: flex;
+    margin: 15px 0;
+}
+
+.g-menu_members__savebtncontainer-savebtn{
+    background: #B90EDF;
+    border-radius: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.g-menu_members__savebtncontainer button{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 33px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.g-menu_members-memberbox{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 0;
+}
+
+.g-menu_members-memberbox__content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15px;
+}
+
+.g-menu_members-memberbox__content-name{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+    color: #100D26;
+}
+
+.g-menu_members-memberbox__content-role{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+    color: #FC3792;
+}
+
+.g-memberimg{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px solid #4B1027;
+}
+
+.g-admin_section__message{
+    width: 90%;
+    border-radius: 10px;
+    background-color: rgb(16 13 38 / 28%);
+    color: white;
+    padding: 10px 15px;
+    margin: 20px 0;
+}
