@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-include('functions/auth/login.php');
+include('../functions/auth/login.php');
 
+//when form submit
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $username = $_POST['login_username'];
     $pwd = $_POST['login_pwd'];
@@ -40,7 +41,7 @@ if(checkLoggedIn() == 1){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app/styles/login.css">
+    <link rel="stylesheet" href="../app/styles/login.css">
     <title>IAG-Media | Ecommerce Marketing Agency</title>
     <meta name="description" content="We Help E-commerce &amp; Info Product Businesses By Producing Spine-Chilling ROI Via Paid Advertising. "/>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.webp"/>

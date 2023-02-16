@@ -9,7 +9,7 @@
 
     //if not logged in redirect to login
     if(checkLoggedIn() == 0){
-        $uri = 'http://'.$_SERVER['HTTP_HOST'].'/iag-media/login.php';
+        $uri = 'http://'.$_SERVER['HTTP_HOST'].'/iag-media/web-admin/login.php';
         header("Location: $uri");
         die;
     }
@@ -95,7 +95,7 @@
             </div>
             <div class="w-admin__container__menuside-bottommenu">
                 <div class="w-admin__container__menuside-bottommenu-item">
-                    <form action="<?php echo htmlspecialchars('http://'.$_SERVER['HTTP_HOST'].'/iag-media/logout.php'); ?>" method="post">
+                    <form action="<?php echo htmlspecialchars('http://'.$_SERVER['HTTP_HOST'].'/iag-media/web-admin/logout.php'); ?>" method="post">
                         <input type="submit" value="Logout"/>
                     </form>
                 </div>

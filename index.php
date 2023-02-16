@@ -1,7 +1,7 @@
 <?php 
 
 include("functions/db/connection.php");
-//load site data
+//fetcg site data
     //business details
     $q1 = "SELECT * FROM details ORDER BY id DESC LIMIT 1";
     $logo_img = '';
@@ -231,6 +231,7 @@ include("functions/db/connection.php");
             <div class="w-home__team__container-left">
                 <?php
 
+                //fetch members
                 $sql = "SELECT * FROM members ORDER BY id LIMIT 4";
                 try {
                     $result = $conn->query($sql);
