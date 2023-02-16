@@ -28,6 +28,8 @@ a{
 .w-admin__container__menuside{
     width: 30%;
     background-color: #100D26;
+    display: flex;
+    flex-direction: column;
 }
 
 .w-admin__container__menuside__logocontainer{
@@ -46,6 +48,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    min-height: 80vh;
 }
 
 .w-admin__container__menuside__menuitemcontainer-item{
@@ -341,4 +344,25 @@ a{
     color: white;
     padding: 10px 15px;
     margin: 20px 0;
+}
+
+.w-admin__container__menuside-bottommenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+}
+
+.w-admin__container__menuside-bottommenu-item{
+    margin: 10px 0;
+}
+
+.w-admin__container__menuside-bottommenu-item input{
+    color: white;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
 }

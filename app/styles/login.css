@@ -1,0 +1,70 @@
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.w-login__container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-login__container__box{
+    border-radius: 5px;
+    min-width: 400px;
+    padding: 20px 15px;
+    background-color: #100D26;
+    color: white;
+    box-shadow: 2px 2px 20px 1px #100d26;
+}
+
+.w-login__container__box-msgbox{
+    margin: 12px 0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: rgba(252, 55, 147, 0.733);
+    font-size: 15px;
+}
+
+.w-login__container__box-title{
+    font-weight: 700;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.w-login__container__box form{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.w-login__container__box form input{
+    display: block;
+    margin: 5px 0;
+    min-width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.w-login__container__box form button{
+    width: 100%;
+    margin: 15px;
+    padding: 10px 30px;
+    background-color: rgb(252, 55, 147);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+}

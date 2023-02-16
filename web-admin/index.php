@@ -1,8 +1,18 @@
 <?php 
-    $menu = $_GET['menu'] ?? '';
     session_start();
+
+    $menu = $_GET['menu'] ?? '';
+
     include('../functions/db/connection.php');
     include('../functions/upload/imgUpload.php');
+    include('../functions/auth/login.php');
+
+    //if not logged in redirect to login
+    if(checkLoggedIn() == 0){
+        $uri = 'http://'.$_SERVER['HTTP_HOST'].'/iag-media/login.php';
+        header("Location: $uri");
+        die;
+    }
 
     $sql = "SELECT * FROM details ORDER BY id DESC LIMIT 1";
     try {
@@ -32,7 +42,7 @@
     <section class="w-admin__container">
         <div class="w-admin__container__menuside">
             <div class="w-admin__container__menuside__logocontainer">
-                <img src="../assets/<?php echo $logo_img ?>"/>
+                <a href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/iag-media'; ?>"><img src="../assets/<?php echo $logo_img ?>"/></a>
             </div>
             <div class="w-admin__container__menuside__menuitemcontainer">
                 <?php 
@@ -82,6 +92,13 @@
                 }
                 ?>
                     
+            </div>
+            <div class="w-admin__container__menuside-bottommenu">
+                <div class="w-admin__container__menuside-bottommenu-item">
+                    <form action="<?php echo htmlspecialchars('http://'.$_SERVER['HTTP_HOST'].'/iag-media/logout.php'); ?>" method="post">
+                        <input type="submit" value="Logout"/>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="w-admin__container__contentside">
