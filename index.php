@@ -1,3 +1,45 @@
+<?php 
+
+include("functions/db/connection.php");
+//load site data
+    //business details
+    $q1 = "SELECT * FROM details ORDER BY id DESC LIMIT 1";
+    $logo_img = '';
+    $contact_email = '';
+    $company_number = '';
+    try {
+        $result = $conn->query($q1);
+        while($row=$result->fetch_assoc()){
+            $logo_img = $row['logoUrl'];
+            $contact_email = $row['contact_email'];
+            $company_number = $row['company_number'];
+        }
+    } catch (\Throwable $th) {
+        throw $th;
+        die;
+    }
+    
+    //progress
+    $total_ad_spent = '';	
+    $number_of_offices = '';	
+    $services_offer = '';	
+    $clients_helped	= '';
+    $q2 = "SELECT * FROM progress ORDER BY id DESC LIMIT 1";
+    
+    try {
+        $result = $conn->query($q2);
+    
+        while($row=$result->fetch_assoc()){
+            $total_ad_spent = $row['total_ad_spent'];	
+            $number_of_offices = $row['number_of_offices'];	
+            $services_offer = $row['services_offer'];	
+            $clients_helped	= $row['clients_helped'];
+        }
+    } catch (\Throwable $th) {
+        throw $th;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +57,7 @@
 <body>
     <!-- header -->
     <div class="w-home__header">
-        <img src="assets/logo.png" class="g-logo"/>
+        <a href="<?php echo $_SERVER['REQUEST_URI'] ?>"><img src="assets/<?php echo $logo_img ?>" class="g-logo"/></a>
     </div>
 
     <div class="w-home__cover">
@@ -59,7 +101,7 @@
                             CLIENTS HELPED
                             </div>
                             <div class="w-home__stats__container-left__statboxcontainer-box__container-number">
-                            57
+                            <?php echo $clients_helped; ?>
                             </div>
                         </div>
                     </div>
@@ -69,7 +111,7 @@
                             TOTAL AD SPENT
                             </div>
                             <div class="w-home__stats__container-left__statboxcontainer-box__container-number">
-                            $14.7 M
+                            $<?php echo $total_ad_spent; ?> M
                             </div>
                         </div>
                     </div>
@@ -79,7 +121,7 @@
                             OFFICES
                             </div>
                             <div class="w-home__stats__container-left__statboxcontainer-box__container-number">
-                            0
+                            <?php echo $number_of_offices; ?>
                         </div>
                         </div>
                     </div>
@@ -89,7 +131,7 @@
                             SERVICES OFFER
                             </div>
                             <div class="w-home__stats__container-left__statboxcontainer-box__container-number">
-                            1
+                            <?php echo $services_offer; ?>
                             </div>
                         </div>
                     </div>
@@ -187,42 +229,34 @@
     <div class="w-home__team">
         <div class="w-home__team__container">
             <div class="w-home__team__container-left">
-                <div class="w-home__team__container-left-memberbox">
-                    <img class="g-memberimg" src="assets/Iman-Gadzhi.png"/>
-                    <div class="w-home__team__container-left-memberbox-name">
-                    Iman Gadzhi
+                <?php
+
+                $sql = "SELECT * FROM members ORDER BY id LIMIT 4";
+                try {
+                    $result = $conn->query($sql);
+                    
+                } catch (\Throwable $th) {
+                    throw $th;
+                }
+
+                while($row = $result->fetch_assoc()){
+                    $img = $row['imgUrl'];
+                    $name = $row['name'];
+                    $role = $row['role'];
+
+                    echo '
+                    <div class="w-home__team__container-left-memberbox">
+                        <img class="g-memberimg" src="assets/'.$img.'"/>
+                        <div class="w-home__team__container-left-memberbox-name">'
+                        .$name.
+                        '</div>
+                        <div class="w-home__team__container-left-memberbox-role">'
+                        .$role.'
+                        </div>
                     </div>
-                    <div class="w-home__team__container-left-memberbox-role">
-                    FOUNDER
-                    </div>
-                </div>
-                <div class="w-home__team__container-left-memberbox">
-                    <img class="g-memberimg" src="assets/ciaran.png"/>
-                    <div class="w-home__team__container-left-memberbox-name">
-                    Ciaran Anderson
-                    </div>
-                    <div class="w-home__team__container-left-memberbox-role">
-                    COPYWRITER
-                    </div>
-                </div>
-                <div class="w-home__team__container-left-memberbox">
-                    <img class="g-memberimg" src="assets/dany.jpg"/>
-                    <div class="w-home__team__container-left-memberbox-name">
-                    Dany Benavides
-                    </div>
-                    <div class="w-home__team__container-left-memberbox-role">
-                    CHIEF MARKETING OFFICER
-                    </div>
-                </div>
-                <div class="w-home__team__container-left-memberbox">
-                    <img class="g-memberimg" src="assets/lois.jpg"/>
-                    <div class="w-home__team__container-left-memberbox-name">
-                    Luis Berger
-                    </div>
-                    <div class="w-home__team__container-left-memberbox-role">
-                    PERFORMANCE MARKETER
-                    </div>
-                </div>
+                    ';
+                }
+                ?>
             </div>
             <div class="w-home__team__container-right">
                 <div class="g-textblock">
@@ -323,7 +357,7 @@
                 Have A General Inquiry?
                 </div>
                 <div class="w-home__footer__container__message-tagline">
-                If you have a general inquiry and would like to speak to our expert team, you can contact us via email at: dany@iag-media.com
+                If you have a general inquiry and would like to speak to our expert team, you can contact us via email at: <?php echo $contact_email; ?>
                 </div>
                 <div class="g-speaktoteambtncontainer" style="margin:10px 0 0 0">
                     <div class="g-speaktoteambtn">
@@ -335,7 +369,7 @@
             <div class="w-home__footer__container__details">
                 <img src="assets/logo.png" class="g-logo" style="margin:18px!important;"/>
                 <div class="w-home__footer__container__details-number">
-                IAG Online Services - Company Number: 111898989
+                IAG Online Services - Company Number: <?php echo $company_number; ?>
                 </div>
                 <div class="w-home__footer__container__details-rightsreserved">
                 All Rights Reserved | All Wrongs Reversed
