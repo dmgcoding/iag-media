@@ -16,17 +16,16 @@ Built a simple admin panel to update stats, company details and employees. Added
 
 ## Demo
 
-<img src="https://github.com/dmgcoding/iag-media/blob/main/gifs/details_1.gif" width="200" height="400" />
 
-![App screenshot](/gifs/site.gif)
+<img src="https://github.com/dmgcoding/iag-media/blob/main/gifs/site.gif" width="500"/>
 
-![App Screenshot](/gifs/details.gif)
+<img src="https://github.com/dmgcoding/iag-media/blob/main/gifs/details_1.gif" width="500"/>
 
-![App Screenshot](/gifs/progress.gif)
+<img src="https://github.com/dmgcoding/iag-media/blob/main/gifs/members1.gif" width="500"/>
 
-![App Screenshot](/gifs/members1.gif)
+<img src="https://github.com/dmgcoding/iag-media/blob/main/gifs/members2.gif" width="500"/>
 
-![App Screenshot](/gifs/members2.gif)
+<img src="https://github.com/dmgcoding/iag-media/blob/main/gifs/progress.gif" width="500"/>
 
 
 ## Deployment
