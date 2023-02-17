@@ -16,9 +16,9 @@ Built a simple admin panel to update stats, company details and employees. Added
 
 ## Demo
 
-![App Screenshot](/gifs/site.gif | width=300)
+![App Screenshot](/gifs/site.gif){:height="300px"}.
 
-![App Screenshot](/gifs/details.gif | width=500)
+![App Screenshot](/gifs/details.gif){:width="300px"}.
 
 ![App Screenshot](/gifs/progress.gif)
 
