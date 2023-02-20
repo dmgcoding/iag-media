@@ -33,15 +33,19 @@ Built a simple admin panel to update stats, company details and employees. Added
     1. Clone the repo 
     2. Paste the folder into xampp htdocs folder. 
     3. Go to phpmyadmin and create a new database named 'iag_media'. 
-    4. Go to your browser and type 'localhost/iag-media/' to see the website.
+    4. create a table named 'details' with columns(id[int],logoUrl[varchar], contact_email[varchar], company_number[varchar]). add a record.
+    5. create a table named 'progress' with columns(id[int], clients_helped[int], total_ad_spent[int] ,number_of_offices[int] ,services_offer[int]).
+    6. create a table named 'members' with columns(id[int], name[varchar], role[varchar], imgUrl[varchar])
+    7. change admin password and username in 'functions/auth/login.php' > login function as you wish.
+    8. Go to your browser and type 'localhost/iag-media/' to see the website.
 
     (go to 'localhost/iag-media/web-admin' to go to admin panel)
 
 
 
 ## 🚀 About Me
-I'm a full stack developer. I started as mobile app developer(prefer flutter and react-native over native). And then moved to webdevelopment.
-I've worked on projects with flutter,react-native,nodejs,express.js,django,php,react,nextjs.
+I'm a full stack developer. I started as mobile app developer(prefer flutter and react-native stacks over native). And then moved to webdevelopment.
+I've worked on projects with flutter,react-native,nodejs,express.js,django,php,react,nextjs,wordpress.
 
 ### Contact
 * email: dmgshehan123@gmail.com

@@ -71,12 +71,14 @@ include("functions/db/connection.php");
 
             It's time to make your ad-budget count, scale your business and blow up your sales.
             </p>
-            <div class="g-speaktoteambtncontainer">
-                <div class="g-speaktoteambtn">
-                    <div class="g-speaktoteambtn-text">Speak to our team today</div>
-                    <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
+            <a href="#book_a_call">
+                <div class="g-speaktoteambtncontainer">
+                    <div class="g-speaktoteambtn">
+                        <div class="g-speaktoteambtn-text">Speak to our team today</div>
+                        <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="w-home__cover-right">
             <div class="w-home__cover-right__image">
@@ -145,12 +147,14 @@ include("functions/db/connection.php");
                 <div class="w-home__stats__container-right-boldtext">
                 Maybe that’s you: it would be our honour to find out. Schedule your FREE discovery call below.
                 </div>
-                <div class="g-speaktoteambtncontainer">
-                <div class="g-speaktoteambtn">
-                    <div class="g-speaktoteambtn-text">Speak to our team today</div>
-                    <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
-                </div>
-            </div>
+                <a href="#book_a_call">
+                    <div class="g-speaktoteambtncontainer">
+                        <div class="g-speaktoteambtn">
+                            <div class="g-speaktoteambtn-text">Speak to our team today</div>
+                            <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -168,12 +172,14 @@ include("functions/db/connection.php");
 
                     If you want an agency where with two clicks, you can get a clear breakdown of how much was spent, how much was made & what your net profit was - we’re for you.
                     </p>
-                    <div class="g-speaktoteambtncontainer" style="margin:20px 0 0 0">
-                    <div class="g-speaktoteambtn">
-                        <div class="g-speaktoteambtn-text">Speak to our team today</div>
-                        <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
-                    </div>
-                    </div>
+                    <a href="#book_a_call">
+                        <div class="g-speaktoteambtncontainer">
+                            <div class="g-speaktoteambtn">
+                                <div class="g-speaktoteambtn-text">Speak to our team today</div>
+                                <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="w-home__whatweoffer__container-right">
@@ -235,27 +241,30 @@ include("functions/db/connection.php");
                 $sql = "SELECT * FROM members ORDER BY id LIMIT 4";
                 try {
                     $result = $conn->query($sql);
-                    
+
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = $result->fetch_assoc()){
+                            $img = $row['imgUrl'];
+                            $name = $row['name'];
+                            $role = $row['role'];
+
+                            echo '
+                            <div class="w-home__team__container-left-memberbox">
+                                <img class="g-memberimg" src="assets/'.$img.'"/>
+                                <div class="w-home__team__container-left-memberbox-name">'
+                                .$name.
+                                '</div>
+                                <div class="w-home__team__container-left-memberbox-role">'
+                                .$role.'
+                                </div>
+                            </div>
+                            ';
+                        }
+                    }
+                      
                 } catch (\Throwable $th) {
                     throw $th;
-                }
-
-                while($row = $result->fetch_assoc()){
-                    $img = $row['imgUrl'];
-                    $name = $row['name'];
-                    $role = $row['role'];
-
-                    echo '
-                    <div class="w-home__team__container-left-memberbox">
-                        <img class="g-memberimg" src="assets/'.$img.'"/>
-                        <div class="w-home__team__container-left-memberbox-name">'
-                        .$name.
-                        '</div>
-                        <div class="w-home__team__container-left-memberbox-role">'
-                        .$role.'
-                        </div>
-                    </div>
-                    ';
+                    die;
                 }
                 ?>
             </div>
@@ -266,18 +275,20 @@ include("functions/db/connection.php");
 
                     With our elusive company culture, calibre of clientele & Iman’s social media in the hundreds of thousands - IAG Media has our pick of the litter all across the world when it comes to who we’re able to hire. The team you see in front of you is a culmination of that.
                     </p>
-                    <div class="g-speaktoteambtncontainer" style="margin:20px 0 0 0">
-                    <div class="g-speaktoteambtn">
-                        <div class="g-speaktoteambtn-text">Speak to our team today</div>
-                        <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
-                    </div>
-                    </div>
+                    <a href="#book_a_call">
+                        <div class="g-speaktoteambtncontainer">
+                            <div class="g-speaktoteambtn">
+                                <div class="g-speaktoteambtn-text">Speak to our team today</div>
+                                <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="w-home__bookacall">
+    <div class="w-home__bookacall" id="book_a_call">
         <div class="w-home__bookacall__container">
             <div class="w-home__bookacall__container-left">
                 <img src="assets/calendar.png"/>
@@ -360,12 +371,14 @@ include("functions/db/connection.php");
                 <div class="w-home__footer__container__message-tagline">
                 If you have a general inquiry and would like to speak to our expert team, you can contact us via email at: <?php echo $contact_email; ?>
                 </div>
-                <div class="g-speaktoteambtncontainer" style="margin:10px 0 0 0">
-                    <div class="g-speaktoteambtn">
-                        <div class="g-speaktoteambtn-text">Speak to our team today</div>
-                        <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
+                <a href="#book_a_call">
+                    <div class="g-speaktoteambtncontainer">
+                        <div class="g-speaktoteambtn">
+                            <div class="g-speaktoteambtn-text">Speak to our team today</div>
+                            <div class="g-speaktoteambtn-subtext">Schedule your FREE audit call now</div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="w-home__footer__container__details">
                 <img src="assets/logo.png" class="g-logo" style="margin:18px!important;"/>
