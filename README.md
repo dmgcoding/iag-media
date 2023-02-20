@@ -35,7 +35,7 @@ Built a simple admin panel to update stats, company details and employees. Added
     3. Go to phpmyadmin and create a new database named 'iag_media'. 
     4. Go to your browser and type 'localhost/iag-media/' to see the website.
 
-    (go to 'localhost/iag-media/web-admin' to go to admin panel.use 'admin' as username and 'admin@123' as password)
+    (go to 'localhost/iag-media/web-admin' to go to admin panel)
 
 
 
